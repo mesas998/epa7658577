@@ -1,0 +1,100 @@
+{% extends parent_template|default:"nutr/base_nutr.html" %}
+
+{% block title %}
+{{ block.super }} - EPAColo List
+{% endblock %}
+
+
+{% block create_button %}
+    <a
+        href=""
+        class="button button-primary">
+      Create New EPAColo</a>
+{% endblock %}
+
+
+<!--
+epacolo=EPAColo()
+    epacolo.ffdru=row[0]
+    epacolo.fregid=row[1]
+    epacolo.fsn=row[2]
+    epacolo.lat=row[3]
+    epacolo.slt=row[4]
+    epacolo.loc=row[5]
+    epacolo.county = row[6]
+    epacolo.fips = row[7]
+    epacolo.usps = row[8]
+    epacolo.state = row[9]
+    epacolo.country = row[10]
+    epacolo.postal = row[11]
+    epacolo.ffic = row[12]
+    epacolo.fan = row[13]
+    epacolo.tribe = row[14]
+    epacolo.tln = row[15]
+    epacolo.cdn = row[16]
+    epacolo.huc = row[17]
+    epacolo.region = row[18]
+    epacolo.type = row[19]
+    epacolo.desc = row[20]
+    epacolo.cdate = row[21]
+    epacolo.udate = row[22]
+    epacolo.mex = row[23]
+    epacolo.abbrev = row[24]
+    epacolo.eit = row[25]
+    epacolo.naics = row[26]
+    epacolo.ntext = row[27]
+    epacolo.sic = row[28]
+    epacolo.sict = row[29]
+    epacolo.lati = row[30]
+    epacolo.long = row[31]
+    epacolo.conv = row[32]
+    epacolo.hcmt = row[33]
+    epacolo.ham = row[34]
+    epacolo.rpn = row[35]
+    epacolo.hrdn = row[36]
+    epacolo.cdsn = row[37]
+    epacolo.cbc = row[38]
+
+-->
+{% block nut_content %}
+  <h2>Colorado</h2>
+  <ul>
+    {% for n in epacolo_list %}
+      <li>
+          <a href="">
+          {{n.ffdru }} {{ n.fregid|title }} {{ n.fsn }} {{ n.lat }} {{ n.slt }} {{ n.loc }} {{ n.county }} {{ n.postal }}
+            {{ n.ffic }} {{ n.fan }} {{ n.tribe }} {{ n.tln }} {{ n.cdn }} {{ n.tln }} {{ c.cdn }} {{ n.huc }} {{ n.region }} {{ n.type }}
+            {{ n.desc }} {{ n.cdate }} {{ n.udate }} {{ n.mex }} {{ n.abbrev }} {{ n.eit }} {{ n.naics }} {{ n.ntext }} {{ n.sic }} 
+{{ n.sict }} {{ n.lati }} {{ n.long }} {{ n.conv }} {{ n.hcmt }} {{ n.ham }} {{ n.rpn }} {{ n.hrdn }} {{ n.cdsn }} {{ n.cbc }}</a>
+      </li>
+    {% empty %}
+      <li><em>There are currently no EPAColos available.</em></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
+
+{% block content_footer %}
+  {% if is_paginated %}
+    <ul class="pagination">
+      {% if previous_page_url %}
+        <li>
+          <a href="{{ previous_page_url }}">
+            Previous</a>
+        </li>
+      {% endif %}
+      <li>
+        Page {{ page_obj.number }}
+        of {{ paginator.num_pages }}
+      </li>
+      {% if next_page_url %}
+        <li>
+          <a href="{{ next_page_url }}">
+            Next</a>
+        </li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
+

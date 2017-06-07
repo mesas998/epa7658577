@@ -1,0 +1,19 @@
+{% extends parent_template|default:"nutr/base_nutr.html" %}
+
+{% block title %}
+{{ block.super }} - NutData {{ nutdata.ndb_no }}
+{% endblock %}
+
+{% block content %}
+<h2> NutData {{ nutdata.ndb_no }}</h2>
+
+<article>
+   <dl>
+        <dt>Studies</dt> <dd>{{ nutdata.num_studies }}</dd>
+        <dt>Min</dt> <dd>{{ nutdata.min }}</dd>
+        <dt>Max</dt> <dd>{{ nutdata.max }}</dd>
+    </dl>
+
+
+</article>
+{% endblock %}

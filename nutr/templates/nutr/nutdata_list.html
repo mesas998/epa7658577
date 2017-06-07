@@ -1,0 +1,51 @@
+{% extends parent_template|default:"nutr/base_nutr.html" %}
+
+{% block title %}
+{{ block.super }} - NutData 
+{% endblock %}
+
+
+{% block create_button %}
+    <a
+        href="{% url 'nutr_nutdata_create' %}"
+        class="button button-primary">
+      Create New NutData</a>
+{% endblock %}
+
+{% block nut_content %}
+  <h2>NutData List</h2>
+  <ul>
+    {% for ndat in nutdata_list %}
+      <li>
+        <a href="{{ ndat.get_absolute_url }}">
+          {{ ndat.ndb_no|title }}</a>
+      </li>
+    {% empty %}
+      <li><em>There are currently no NutDatas available.</em></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+
+{% block content_footer %}
+  {% if is_paginated %}
+    <ul class="pagination">
+      {% if previous_page_url %}
+        <li>
+          <a href="{{ previous_page_url }}">
+            Previous</a>
+        </li>
+      {% endif %}
+      <li>
+        Page {{ page_obj.number }}
+        of {{ paginator.num_pages }}
+      </li>
+      {% if next_page_url %}
+        <li>
+          <a href="{{ next_page_url }}">
+            Next</a>
+        </li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}

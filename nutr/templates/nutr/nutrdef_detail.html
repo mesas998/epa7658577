@@ -1,0 +1,49 @@
+{% extends parent_template|default:"nutr/base_nutr.html" %}
+
+{% block title %}
+{{ block.super }} - NutrDef {{ nutrdef.tagname }}
+{% endblock %}
+
+{% block content %}
+<h2> NutrDef {{ nutrdef.tagname }}</h2>
+{% if perms.nutr.change_nutrdef or perms.nutr.delete_nutrdef %}
+  <ul class="inline">
+    {% if perms.nutr.change_nutrdef %}
+        <li>
+          <a
+              href="{{ nutrdef.get_update_url }}"
+              class="button">
+            Edit NutrDef</a></li>
+    {% endif %}
+    {% if perms.nutr.delete_nutrdef %}
+        <li>
+          <a
+              href="{{ nutrdef.get_delete_url }}"
+              class="button">
+            Delete NutrDef</a></li>
+    {% endif %}
+    </ul>
+{% endif %}
+    <dl>
+        <dt>Number (nutr_no)</dt> <dd>{{ nutrdef.nutr_no }}</dd>
+        <dt>Name (tagname)</dt> <dd>{{ nutrdef.tagname }}</dd>
+        <dt>Key (pk)</dt> <dd>{{ nutrdef.pk }}</dd>
+    </dl>
+
+
+
+{% if nutrdef.nutdata_set.all %}
+          <section>
+            <h3>Associated NutData</h3>
+            <ul>
+              {% for nutdat1 in nutrdef.nutdata_set.all %}
+                <li>
+                  <a href="{{ nutdat1.link }}">
+                    {{ nutdat1.ndb_no|title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </section>
+      {% endif %}
+
+{% endblock %}
