@@ -1,9 +1,9 @@
 import os
-os.environ['DJANGO_SETTINGS_MODULE'] = 'food.settings'
-from food import settings
+os.environ['DJANGO_SETTINGS_MODULE'] = 'epa7658577.settings'
+from epa7658577 import settings
 from nutr.models import *
 import csv
-dataReader = csv.reader(open('/Users/michaelsweeney/food/epa.csv'), delimiter=',', quotechar='"')
+dataReader = csv.reader(open('/Users/michaelsweeney/epa7658577/epa.csv'), delimiter=',', quotechar='"')
 
 for row in dataReader:
   try:

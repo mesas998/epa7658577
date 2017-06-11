@@ -19,7 +19,7 @@ from core.utils import UpdateView
 from user.decorators import class_login_required, require_authenticated_permission
 from django.contrib.auth.decorators import login_required, permission_required
 from django.utils.decorators import method_decorator
-
+import requests
 
 def homepage(request):
     nutrdef_list = NutrDef.objects.all()
@@ -94,3 +94,7 @@ def epacolo_list(request):
         'nutr/epacolo_list.html',
         {'epacolo_list': EPAColo.objects.all()})
 
+def index(request):
+    r = requests.get('http://httpbin.org/status/418')
+    print(r.text)
+    return HttpResponse('<pre>' + r.text + '</pre>')
