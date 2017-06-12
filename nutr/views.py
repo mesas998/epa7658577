@@ -93,8 +93,3 @@ def epacolo_list(request):
         request,
         'nutr/epacolo_list.html',
         {'epacolo_list': EPAColo.objects.all()})
-
-def index(request):
-    r = requests.get('http://httpbin.org/status/418')
-    print(r.text)
-    return HttpResponse('<pre>' + r.text + '</pre>')

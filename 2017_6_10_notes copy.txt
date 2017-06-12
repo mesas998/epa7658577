@@ -1,62 +1,9 @@
-6/12/17
-1)
-$ git clone https://mesas966@bitbucket.org/mesas966/food.git
-Cloning into 'food'...
-warning: You appear to have cloned an empty repository.
-Checking connectivity... done.
-
-2) $ heroku create epa7658577
-Creating ⬢ epa7658577... done
-https://epa7658577.herokuapp.com/ | https://git.heroku.com/epa7658577.git
-
-3) $ heroku open
-https://safe-peak-22976.herokuapp.com/nutrdef/
-nutrdef eureka!
-
-4)
-https://safe-peak-22976.herokuapp.com/epacolo/
-(I previously put a bougus “x.” in epacolo_list.html)
-epacolo app broke
-
-5) heroku logs
-Exception while resolving variable 'c' in template 'nutr/epacolo_list.html'.
-
-6)
-heroku create
-Creating app... done, ⬢ evening-island-49926
-https://evening-island-49926.herokuapp.com/ | https://git.heroku.com/evening-island-49926.git
-$ heroku open
-
-
-5)
-for app in $(heroku apps); do heroku apps:destroy --app $app --confirm $app; done
- ▸    Couldn't find that app.
- ▸    Couldn't find that app.
- ▸    Couldn't find that app.
-Destroying ⬢ epa7658577 (including all add-ons)... done
-Destroying ⬢ evening-island-49926 (including all add-ons)... done
-Destroying ⬢ mighty-castle-81118 (including all add-ons)... done
-Destroying ⬢ quiet-forest-12584 (including all add-ons)... done
-Destroying ⬢ safe-peak-22976 (including all add-ons)... done
-Michaels-MacBook-Air:epa7658577 michaelsweeney$ heroku create june-12-2017-1045
-Creating ⬢ june-12-2017-1045... done
-https://june-12-2017-1045.herokuapp.com/ | https://git.heroku.com/june-12-2017-1045.git
-Michaels-MacBook-Air:epa7658577 michaelsweeney$ git init
-Reinitialized existing Git repository in /Users/michaelsweeney/epa7658577/.git/
-Michaels-MacBook-Air:epa7658577 michaelsweeney$ 
-
-
-
-
-***
-
-
 1) 
 $ git clone https://github.com/heroku/python-getting-started.git
 $ cd python-getting-started
 
 2) https://devcenter.heroku.com/articles/deploying-python#prerequisites
-$ brew install heroku
+$ brew install heroic
 
 3) https://devcenter.heroku.com/articles/getting-started-with-python#introduction
 remember use pip3.4, not pip
@@ -277,89 +224,7 @@ eureka!
 16)
 OK found bug in epacolo_list.html, fixed
 $ git push (mesas998 Hyyt7tyt8!)
-
-warning: push.default is unset; its implicit value has changed in
-Git 2.0 from 'matching' to 'simple'. To squelch this message
-and maintain the traditional behavior, use:
-
-  git config --global push.default matching
-
-To squelch this message and adopt the new behavior now, use:
-
-  git config --global push.default simple
-
-When push.default is set to 'matching', git will push local branches
-to the remote branches that already exist with the same name.
-
-Since Git 2.0, Git defaults to the more conservative 'simple'
-behavior, which only pushes the current branch to the corresponding
-remote branch that 'git pull' uses to update the current branch.
-
-See 'git help config' and search for 'push.default' for further information.
-(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
-'current' instead of 'simple' if you sometimes use older versions of Git)
-
-Everything up-to-date
-$ git push heroku master
-Everything up-to-date
-$ heroku open
  
-17) delete names in nutr/urls/nutrdef.py etc
-$ heroku create
-Creating app... !
- ▸    You've reached the limit of 5 apps for unverified accounts. Delete some apps or add a credit card to verify your account.
-(suggestion on https://gist.github.com/naaman/1384970)
-$ for ▸    Couldn't find that app.
- ▸    Couldn't find that app.
- ▸    Couldn't find that app.
-Destroying ⬢ boiling-taiga-60265 (including all add-ons)... done
-Destroying ⬢ immense-forest-93965 (including all add-ons)... done
-Destroying ⬢ limitless-scrubland-50374 (including all add-ons)... done
-Destroying ⬢ morning-dusk-74347 (including all add-ons)... done
-Destroying ⬢ sheltered-garden-95714 (including all add-ons)... done
-
-$ heroku create
-Creating app... done, ⬢ safe-peak-22976
-https://safe-peak-22976.herokuapp.com/ | https://git.heroku.com/safe-peak-22976.git
-$ git push heroku master
-Counting objects: 7617, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (6609/6609), done.
-Writing objects: 100% (7617/7617), 32.15 MiB | 7.81 MiB/s, done.
-Total 7617 (delta 2177), reused 133 (delta 50)
-remote: Compressing source files... done.
-remote: Building source:
-remote: 
-remote: -----> Python app detected
-remote: -----> Installing python-2.7.13
-remote: -----> Installing pip
-remote: -----> Installing requirements with pip
-remote:        Collecting dj-database-url==0.4.1 (from -r /tmp/build_240b3d0c0a926987d0d29071f97ff92d/requirements.txt (line 1))
-remote:          Downloading dj-database-url-0.4.1.tar.gz
-remote:        Collecting Django==1.9.7 (from -r /tmp/build_240b3d0c0a926987d0d29071f97ff92d/requirements.txt (line 2))
-remote:          Downloading Django-1.9.7-py2.py3-none-any.whl (6.6MB)
-remote:        Collecting gunicorn==19.6.0 (from -r /tmp/build_240b3d0c0a926987d0d29071f97ff92d/requirements.txt (line 3))
-remote:          Downloading gunicorn-19.6.0-py2.py3-none-any.whl (114kB)
-remote:        Collecting psycopg2==2.6.2 (from -r /tmp/build_240b3d0c0a926987d0d29071f97ff92d/requirements.txt (line 4))
-remote:          Downloading psycopg2-2.6.2.tar.gz (376kB)
-remote:        Collecting whitenoise==2.0.6 (from -r /tmp/build_240b3d0c0a926987d0d29071f97ff92d/requirements.txt (line 5))
-remote:          Downloading whitenoise-2.0.6-py2.py3-none-any.whl
-remote:        Collecting requests==2.9.1 (from -r /tmp/build_240b3d0c0a926987d0d29071f97ff92d/requirements.txt (line 6))
-remote:          Downloading requests-2.9.1-py2.py3-none-any.whl (501kB)
-remote:        Installing collected packages: dj-database-url, Django, gunicorn, psycopg2, whitenoise, requests
-remote:          Running setup.py install for dj-database-url: started
-remote:            Running setup.py install for dj-database-url: finished with status 'done'
-remote:          Running setup.py install for psycopg2: started
-remote:            Running setup.py install for psycopg2: finished with status 'done'
-remote:        Successfully installed Django-1.9.7 dj-database-url-0.4.1 gunicorn-19.6.0 psycopg2-2.6.2 requests-2.9.1 whitenoise-2.0.6
-remote: 
-remote: -----> $ python manage.py collectstatic --noinput
-
-18)
-https://safe-peak-22976.herokuapp.com/nutrdef/
-eureka
-https://safe-peak-22976.herokuapp.com/epacolo/
-(still complaining about c in epacolo_list.html)
 ****
 
 
